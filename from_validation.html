@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>from validation</title>
+    <link rel="stylesheet" href="css/from_validation.css">
+</head>
+
+<body>
+    <div class="from">
+        <label id="hinh-anh" for="hinh-anh"> Nhập ảnh sản phẩm</label>
+        <input type="text" id="hinh-anh">
+        <label id="hienThiLoiAnhSanPham" for="hinhAnh" class="error"></label>
+
+        <label id="ten-san-pham" for="ten-san-pham"> Tên sản phẩm</label>
+        <input type="text" id="ten-san-pham">
+        <label id="hienThiLoiTenSanPham" for="TenSanPham" class="error"></label>
+
+        <label id="gia-goc" for="gia-goc">Nhập giá</label>
+        <input type="number" id="gia-goc">
+        <label id="hienThiLoiGiaNhap" for="giaGoc" class="error"></label>
+
+        <button onclick="onclickDangNhap()" class="btn ">Thêm mới</button>
+
+        <script>
+            /* Khi click vào button đăng nhập thì thực hiện kiểm tra from
+            1. Nếu dl from hợp lệ thì tiếp tục thực hiện
+            2. Nếu dữ liệu trong from không hợp lệ thì thông báo lỗi
+            */
+            /* Những bước thực hiện
+            1. truy cập node hoTen, soDienThoai đêlr lấy dl
+            2. Kiểm tra xem dl của trường họ tên và sđt có hợp lệ không 
+            3. Nếu hợp lệ thì tiếp tục thực hiện nếu không hợp lệ thì thông báo lỗi*/
+            function onclickDangNhap() {
+                //kiểm tra hợp lệ
+                if (fromDangNhap() == true) {
+                    //thực hiện đăng nhập
+
+                }
+            }
+
+            /* Yêu cầu: kiểm tra tính hợp lệ của from dăng nhập
+            output nếu hợp lệ thì trả về ture
+            nếu k thì trả về false*/
+
+            function fromDangNhap() {
+                var hople = true;
+
+                var nodeAnh = document.getElementById('hinh-anh');
+                var hinhAnh = nodeAnh.value;
+
+                var nodeTenSanPham = document.getElementById('ten-san-pham');
+                var tenSanPham = nodeTenSanPham.value;
+
+                var nodeGiaGoc = document.getElementById('gia-goc');
+                var giaGoc = nodeGiaGoc.value;
+
+                console.log('giá gốc sản phẩm' + giaGoc);
+                console.log('hình ảnh là:  ' + hinhAnh);
+                console.log('Tên sản phẩm là: ' + tenSanPham);
+
+                var nodeHienThiLoiHinhAnh = document.getElementById('hienThiLoiAnhSanPham');
+                nodeHienThiLoiHinhAnh.innerHTML = '';
+
+                var nodeHienThiLoiTenSanPham = document.getElementById('hienThiLoiTenSanPham');
+                nodeHienThiLoiTenSanPham.innerHTML = '';
+
+                var nodeHienThiLoiGiaGoc = document.getElementById('hienThiLoiGiaNhap');
+                nodeHienThiLoiGiaGoc.innerHTML = '';
+
+                if (hinhAnh == null || hinhAnh.length <= 0) {
+
+                    nodeHienThiLoiHinhAnh.innerHTML = "Hãy Nhập vào hình ảnh";
+                    hople = false;
+                }
+                if (tenSanPham == null || tenSanPham.length <= 0) {
+
+                    nodeHienThiLoiTenSanPham.innerHTML = "Hãy nhập tên sản phẩm";
+                    hople = false;
+                }
+                if (giaGoc == null || giaGoc.length <= 0) {
+                    nodeHienThiLoiGiaGoc.innerHTML = "Nhập vào Số ";
+                    hople = false;
+                }
+                return true;
+            }
+        </script>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.danh-sach {
+    color: black;
+    width: 50%;
+    margin: auto;
+    text-align: left;
+    font-size: 16px;
+    border: 0.5px solid #ddd;
+    box-shadow: 0.5px 0.5px 0.5px 2px #ddd;
+}
+
+.khung {
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.from {
+    width: 50%;
+    font-size: 16px;
+    text-align: center;
+    color: black;
+}
+
+.email label,
+input {
+    width: 100%;
+    display: block;
+    height: 30px;
+}
+
+.email input {
+    height: 40px;
+    border: 0.5px solid #dddddd;
+    box-shadow: 0.5px 0.5px 0.5px 1px #dddddd;
+}
+
+.nhap-vao .face i {
+    font-size: 16px;
+    line-height: 20px;
+    color: rgb(0, 0, 255);
+}
+
+.nhap-vao .gmail i {
+    font-size: 16px;
+    line-height: 20px;
+    color: red;
+}
+
+.email label {
+    margin-top: 10px;
+    padding: 5px;
+    color: black;
+}
+
+.nhap-vao {
+    margin-top: 20px;
+}
+
+.nhap-vao button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    background-color:#0099FF	;
+}
+
+.email .error {
+    font-size: 16px;
+    color: crimson;
+    font-style: italic;
+    margin-top: 20px;
+    line-height: 16px;
+    height: 20px;
+}

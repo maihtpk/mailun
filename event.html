@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>học một số sự kiện mới</title>
+    <style>
+        .block {
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <!--onchange: dl bên trong bị thay đổi-->
+    <input onkeydown="anMotPhim()" onchange="onChange()" type="text">
+
+    <!--mouseover; mouseout: rê chuột vào và rê chuột ra khỏi khối-->
+    <div onmouseover="reChuotVao()" onmouseout="reChuotRa()" class="block"></div>
+    <script>
+        function onChange() {
+            console.log('onchange');
+        }
+        function reChuotVao() {
+            console.log('rê chuột vào khối');
+        }
+        function reChuotRa() {
+            console.log('rê chuột ra khối');
+        }
+
+        function anMotPhim() {
+            console.log('ấn phím');
+        }
+    </script>
+</body>
+
+</html>

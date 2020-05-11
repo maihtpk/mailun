@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <script src="https://kit.fontawesome.com/4e23580c46.js" crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/jquery.min.js"></script>
+        <script src="js/jquery.bxslider.min.js"></script>
+        <script src="js/sanpham.js"></script>
+        <script src="js/ho_tro.js"></script>
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="danh_sach_san_pham.html">
+                    <img src="images/logo1.png">
+                </a>
+            </div>
+            <a href="#">
+            <div class="theo-doi-don-hang">
+
+                <i class="fas fa-shipping-fast"></i>
+                <span class="van-chuyen">
+                   <a href="danh_sach_gio_hang.html">Vận chuyển nhanh</a> </span>
+
+
+            </div>
+        </a>
+            <div class="thong-bao">
+
+                <i class="fas fa-bell"></i>
+                <span class="chuong-thong-bao">Thông báo</span>
+
+            </div>
+            <div class="dang-nhap">
+                <i class="fas fa-user"></i>
+                <span class="nhap"><a href="dangnhap.html"> Đăng nhập</a></span>
+            </div>
+                <div class="dang-ki">
+                    <button class="click-dang-ki">Đăng kí</button>
+
+                    <button class="click-dang-ki">Tạo tài khoản mới</button>
+
+                    <button class="click-dang-ki">
+                        <span class="icon">
+                            <i class="fab fa-facebook"></i>
+                            Đăng nhập bằng facebook
+                        </span>
+                    </button>
+                    <button class="click-dang-ki">
+                        <span class="icon-email">
+                            <i class="fas fa-envelope"></i>
+                            Đăng nhập bằng email
+                        </span>
+                    </button>
+                </div>
+
+            <div class="thanh-tim-kiem">
+                <div class="tim-kiem">
+                    <input type="o-tim-kiem" placeholder="Tìm kiếm các sản phẩm, thương hiệu hay danh mục mà bạn muốn...  ">
+                    <input type="button">
+                </div>
+            </div>
+        </div>
+        <nav id="nav-bar">
+            <ul class="menu1">
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Máy ảnh - Máy quay phim</a>
+
+                    <ul class="menu2">
+
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Máy ảnh</a>
+                        </li>
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Phụ kiện máy ảnh - máy quay phim</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Hàng quốc tế</a>
+                </li>
+
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Thời trang- Phụ kiện</a>
+
+                    <ul class="menu2">
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Thời trang nam</a>
+                        </li>
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Thời trang nữ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item-menu1">
+                    <a href="them_san_pham.html">Thêm sản phẩm mới</a>
+                </li>
+                <li class="item-menu1">
+                    <a href="danh_sach_gio_hang.html">
+                        <img src="images/xe.png">
+                    </a>
+                
+                   
+
+                </li>
+        </nav>
+    </header>
+
+    <section id="slider">
+        <div class="slider">
+            <div name="slider-item" class="slider-item show ">
+                <img src="images/slider.jpg">
+            </div>
+            <div name="slider-item" class="slider-item show ">
+                <img src="images/anh1.jpg">
+            </div>
+            <div name="slider-item" class="slider-item show ">
+                <img src="images/thoitrang.jpg">
+            </div>
+            <div name="slider-item" class="slider-item show ">
+                <img src="images/anh2.jpg">
+            </div>
+            <a onclick="onclickXemAnhSau()" class="Sau">&gt;</a>
+            <a onclick="onclickXemAnhTruoc()" class="Truoc">&lt;</a>
+        </div>
+        <script>
+            /* HTML: lúc đầu tất cả các slider-item sẽ được ẩn đi*/
+            /* Mặc định thì slider-item đầu tiên(vị trí 0) sẽ được hiển thị */
+            /* Khi click nút >((sau), thì sẽ ẩn sloder-item hiện tại đi & hiển thị slider kế tiếp (hiện tại +1)
+                       tuy nhiên : nếu slider-item đang ở vị trí cuối cùng thì slider kế tiếp =0
+                       */
+            var viTriSliderItemHienThiHienTai = 0;
+
+            /* Trả ra danh sách toàn bộ slider item*/
+            var danhSachSliderItem = document.getElementsByName('slider-item');
+            hienThiSliderItem(viTriSliderItemHienThiHienTai);
+
+            function onclickXemAnhTruoc() {
+                viTriSliderItemHienThiHienTai = viTriSliderItemHienThiHienTai - 1;
+
+                if (viTriSliderItemHienThiHienTai == danhSachSliderItem.length - 1)
+                    viTriSliderItemHienThiHienTai = 0;
+
+                hienThiSliderItem(viTriSliderItemHienThiHienTai);
+            }
+            function onclickXemAnhSau() {
+                /* Bước 1: Thay đổi vị trí hiển thị hiện tại của slider item
+                vị trí hiển thị mới = vị trí cũ +1
+                Nếu vị trí cũ là slider item cuối cùng thì vị trí mới =0*/
+                viTriSliderItemHienThiHienTai = viTriSliderItemHienThiHienTai + 1;
+
+                if (viTriSliderItemHienThiHienTai == danhSachSliderItem.length + 1)
+                    viTriSliderItemHienThiHienTai = 0;
+
+
+                hienThiSliderItem(viTriSliderItemHienThiHienTai);
+            }
+            /* Mô tả hiển thị slider item theo vị trí truyền vào
+            */
+            function hienThiSliderItem(viTri) {
+                /* Bước 1: Ẩn toàn bộ các slider item trước đó*/
+                for (var i = 0; i < danhSachSliderItem.length; i++) {
+                    danhSachSliderItem[i].style.display = 'none';
+                }
+
+                /* Bước 2: Hiển thị lên slider item theo vị trí truyền vào*/
+                danhSachSliderItem[viTri].style.display = 'block';
+            }
+        </script>
+
+    </section>
+    <section id="product">
+        
+
+            <div class="item">
+            <div class="item-thumb">
+                <img src="http://4.bp.blogspot.com/-LIsGrzdd6V4/U5a8Fp3nihI/AAAAAAAABRU/z4f8ILAZtgo/s1600/Sony_A7s_zshop_3.jpg"
+                        alt="" srcset="">
+            </div>
+                <h2 class="ten-san-pham">Máy Ảnh Sony Alpha 7 II (28-70mm OSS) </h2>
+            <div class="gia">
+                <span class="gia-goc">28.590.000đ</span>
+                <span class="giam-gia">25.590.000đ</span>
+            </div>
+                <button class="btn">Đưa vào giỏ hàng</button>
+            </div>
+        </div>
+    </section>
+    <footer>
+        CoppyBy @Maiht 26/04/2020
+    </footer>
+    <script>
+        //lấy danh sách sản phẩm dưới local strorage
+        var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+        var danhSachSanpham = JSON.parse(jsonDanhSachSanPham);
+
+        //chuyển danh sách đối tượng sang đoạn html
+        var HTML = taoDanhSachSanPham(danhSachSanpham);
+
+        //gán đoạn html vào section product
+        var nodeProduct = document.getElementById('product');
+        nodeProduct.innerHTML = HTML;
+    </script>
+</body>
+
+</html>

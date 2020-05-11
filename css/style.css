@@ -1,0 +1,287 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+:root{
+    --primary-color :#3366FF;
+    --prima-dark-color:	#0000FF;
+    --primary-light-color:#6699FF;
+    --dark-color:#222;
+    --light-color:#fff;
+}
+
+img{
+    width: 100%;
+}
+
+.btn{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    background-color: hsl(204, 89%, 64%);
+    margin: auto;
+}
+
+.btn1{
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+}
+
+header{
+    padding: 0;
+    margin: 0;
+}
+
+.header{
+    /*max-width: 1100px;*/
+    height: 80px;
+    background-color:#0099FF;
+
+    border: 1px solid #ddd;
+    margin: auto;
+}
+.thanh-tim-kiem{
+    width: 500px;
+    max-height: 30px;
+    margin-left: auto;
+    margin-top: 15px;
+   
+}
+.header .logo{
+    max-width: 110px;
+    max-height: 300px;
+    float: left;
+    padding-left: 40px;
+    margin-top: 2px;
+}
+.tim-kiem{
+    width: 500px;
+    max-height: 30px;
+    line-height: 30px;
+}
+.tim-kiem input:first-child {
+    width: 450px;
+    max-height: 30px;
+    border: 1px solid #fff;
+    padding-right: 5px;
+    line-height: 30px;
+    margin-left: 2px;
+    background-color: transparent;
+    box-shadow: 1px 1px 1px #fff;
+}
+.tim-kiem input:last-child{
+    width: 40px;
+    height: 30px;
+    background-image: url('images/timkiem.png');
+    background-repeat:no-repeat ;
+    float: right;
+    padding-left: 2px;
+}
+
+.theo-doi-don-hang{
+    float: left;
+    max-height: 30px;
+    padding: 5px;
+    line-height: 10px;
+    margin: auto;
+    margin-top: 15px;
+
+}
+.thong-bao{
+    float: left;
+    padding: 5px;
+    max-height: 30px;
+    line-height: 10px;
+    margin: auto;
+    margin-top: 15px;
+}
+.dang-nhap{
+    float: left;
+    padding: 5px;
+    max-height: 30px;
+    line-height: 10px;
+    margin: auto;
+    margin-top: 15px;
+    align-items: center;
+    display: inline-flex;
+    color: rgb(14, 16, 19);
+    display: flex;
+    flex-direction: row;
+}
+.dang-ki{
+    width: 40px;
+    max-height: 30px;
+    line-height: 20px;
+    margin: auto;
+    position: absolute;
+    display: none;
+}
+.dang-ki button {
+    width:100px;
+    max-height: 40px;
+    background-color:#FF99FF ;
+    border: 1px solid #222;
+}
+.dang-ki i{
+    font-size: 16px;
+    line-height: 20px;
+    color:#0000FF ;
+}
+.dang-ki button:hover{
+    background-color: #FF0099;
+}
+.dang-ki:hover .tai-khoan-khac{
+    display: block;
+}
+
+.dang-ki .click-dang-ki:hover{
+
+    text-decoration: underline;
+}
+#nav-bar{
+    background-color:var(--primary-color) ;
+    margin-top: 0px;
+
+}
+
+.menu1{
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+}
+.item-menu1{
+    padding: 20px;
+}
+.item-menu1 a,i{
+    color: var(--light-color);
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.item-menu1:hover{
+    background-color: var(--prima-dark-color);
+}
+
+.item-menu1:hover .menu2{
+    display: block;
+}
+
+.item-menu1:last-child{
+    margin-left: auto;
+}
+.item-menu1 img{
+    width: 30px;
+    height: 30px;
+}
+
+.menu2{
+    border: 1px solid #ddd;
+    box-shadow:1px 1px 4px #ddd;
+    background-color: var(--light-color);
+    position: absolute;
+    top: 52px;
+    display: none;
+}
+
+.menu2 a{
+    color: var(--dark-color);
+}
+
+.menu2 .item-menu2{
+    padding:10px 20px ;
+    padding-left: 20px;
+}
+
+.menu2 .item-menu2:hover{
+    text-decoration: underline;
+}
+
+/*slider*/
+#slider{
+    width: 1100px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 4px #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.slider-item {
+    display: none;
+}
+.show {
+    display: block;
+}
+
+.slider a {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+/*Danh sách sản phẩm*/
+#product{
+    max-width: 1100px;
+    margin: auto;
+    margin-top: 40px;
+}
+
+#product .items{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 20px;
+}
+
+#product .items .item{
+    border: 1px solid #ddd;
+    box-shadow: 1px 2px 4px #ddd;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+#product .items .item .ten-san-pham{
+    font-size: 18px;
+    line-height: 20px;
+    margin: 10px 0;
+}
+
+#product .items .item  .gia{
+    margin-bottom: 20px;
+}
+
+#product .items .item .gia .gia-goc{
+   
+    font-size: 12px;
+    text-decoration: line-through;
+
+}
+
+#product .items .item .gia .giam-gia{
+    font-size: 16px;
+    color:  var(--primary-color);
+}
+
+#product .items .item .btn{
+    margin-left: auto;
+    display:block ;
+}
+
+footer{
+    padding: 10px 20px;
+    background-color: var(--dark-color);
+    text-align: center;
+    color: var(--light-color);
+    margin-top: 50px;
+}

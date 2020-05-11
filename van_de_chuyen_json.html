@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vấn đề chuyển json</title>
+    <script src="js/sanPham.js"></script>
+</head>
+
+<body>
+    <input type="text" id="key" placeholder="Nhập key của local storage">
+    <input type="text" id="value" placeholder="Nhập giá trị của lical storage">
+
+    <button onclick="onclickThemGiaTriLocalStorage()">Thêm giá trị</button>
+    <button> Xóa Giá trị</button>
+    <script>
+        //Lưu trữ localstorage
+        localStorage.setItem('tenDangNhap', 'maiht');
+        localStorage.setItem('matKhauDangNhap', '1234567');
+
+        var tenDangNhap = localStorage.getItem('tenDangNhap');
+        console.log('tên đang nhập' + tenDangNhap);
+        console.log('mật khẩu dăng nhập là: ' + localStorage.getItem('matKhauDangNhap'));
+
+        function onclickThemGiaTriLocalStorage() {
+            console.log('gọi vào hàm local storage');
+            // lấy ra giá trị key và value
+            var nodeInputKey = document.getElementById('key');
+            var key = nodeInputKey.value;
+            var nodeInputValue = document.getElementById('value');
+            var value = nodeInputValue.value;
+
+            localStorage.setItem(key, value);
+
+            alert('Thêm dl thành công');
+
+        }
+       
+        
+        function onclickXoaGiaTriKhoiLocalStorage() {
+            console.log('Xóa hàm');
+            var nodeInputKey = document.getElementById('key');
+            var key = nodeInputKey.value;
+            localStorage.removeItem(key);
+        }
+
+        var json = localStorage.getItem('sanPham');
+        var doiTuong = JSON.parse(json);
+        console.log(doiTuong);
+
+        //chuyển thành phương thức
+        var doiTuongTuDay = taoDoiTuongSanPham(doiTuong.hinhAnh, doiTuong.ten, doiTuong.phanTramGiamGia, doiTuong.giaGoc, doiTuong.khuVuc);
+        console.log(doiTuongTuDay);
+        console.log(doiTuongTuDay);
+    </script>
+    <script>
+         //vấn đề lưu trữ local Storage
+
+        //tạo sản phẩm
+        var iphone5 = taoDoiTuongSanPham('https://cdn.tgdd.vn/Products/Images/42/210655/iphone-11-pro-256gb-black-400x460.png','iphone',5000000,0.15,'Đà Nẵng');
+        
+        localStorage.setItem('sanPham');
+    </script>
+</body>
+
+</html>

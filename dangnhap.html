@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập</title>
+    <script src="https://kit.fontawesome.com/4e23580c46.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/dangnhap.css">
+   
+</head>
+
+<body>
+
+    <div class="khung">
+        <div class="danh-sach">
+            <div class="form">
+                <div class="email">
+                    <label id="email-SDT" for="email-SDT" class="error">Nhập email hoặc số điện thoại</label>
+                    <input type="text" id="email" name="email" placeholder="Nhập địa chỉ email hoặc số điện thoại">
+                    <label id="mat-khau" for="mat-khau" class="error">Nhập mật khẩu</label>
+                    <input type="text" id="mat-khau" name="mat-khau" placeholder="Mật khẩu từ 6 đến 12 kí tự">
+                </div>
+            </div>
+
+
+            <div class="nhap-vao">
+                <button onclick="onclickDangNhap()" class="btn">Đăng nhập</button>
+                <button class="face">
+                    <span class="face">
+                        <i class="fab fa-facebook"></i>
+                    </span>
+                    <a href="https://vi-vn.facebook.com/login/"> Đăng nhập bằng facebook</a>
+                </button>
+                <button class="gmail">
+                    <span class="gmail">
+                        <i class="fas fa-envelope"></i>
+                    </span>
+                    <a
+                        href="https://accounts.google.com/signup/v2/webcreateaccount?flowName=GlifWebSignIn&flowEntry=SignUp">
+                        Đăng ký bằng tài khoản gmail</a>
+                </button>
+            </div>
+        </div>
+    </div>
+    <script>
+        function onclickDangNhap() {
+            //kiểm tra hợp lệ
+            if (fromDangNhap() == true) {
+                //thực hiện đăng nhập
+
+            }
+        }
+        function fromDangNhap() {
+            var hople = true;
+
+            var nodeEmailHoacSoDienThoai = document.getElementById('email-SDT');
+            var email = nodeEmailHoacSoDienThoai.value;
+
+            var nodeMatKhau = document.getElementById('mat-khau');
+            var matKhau = nodeMatKhau.value;
+            console.log('email ' + email);
+            console.log('Mật khẩu là: ' + matKhau);
+
+            var nodeHienThiEmailHoacSoDienThoai = document.getElementById('email-SDT');
+            nodeHienThiEmailHoacSoDienThoai.innerHTML = '';
+
+            var nodeHienThiMatKhau = document.getElementById('matKhau');
+            nodeHienThiMatKhau.innerHTML = '';
+
+            if (email == null || email.length <= 0) {
+
+                nodeHienThiEmailHoacSoDienThoai.innerHTML = "Email hoặc số điện thoại không được để trống";
+                hople = false;
+            }
+            if (matKhau == null || matKhau.length <= 0) {
+
+                nodeHienThiMatKhau.innerHTML = "Mật khẩu không được để trống";
+                hople = false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>thêm sản phẩm</title>
+    <script src="js/sanPham.js"></script>
+    <script src="js/ho_tro.js"></script>
+    <link rel="stylesheet" href="css/them_san_pham.css">
+</head>
+
+<body>
+    <div class="them-san-pham-moi">
+        <label for="hinhAnh">Thêm hình ảnh sản phẩm</label>
+        <input type="text" id="hinhAnh">
+
+        <label for="ten">Nhập tên sản phẩm</label>
+        <input type="text" id="ten">
+
+        <label for="giaGoc">Giá gốc</label>
+        <input type="text" id="giaGoc">
+
+        <label for="phanTramGiamGia"> Giảm giá phần trăm</label>
+        <input type="text" id="phanTramGiamGia">
+
+        <label for="khuVuc"> Khu vực</label>
+        <input type="text" id="khuVuc">
+
+        <button onclick="onclickTaoSanPham()"> Tạo sản phẩm</button>
+    </div>
+    <script>
+        function onclickTaoSanPham() {
+            var nodeHinhAnh = document.getElementById('hinhAnh');
+            var hinhAnh = nodeHinhAnh.value;
+            console.log('Hình ảnh là ' + hinhAnh);
+
+            var nodeTen = document.getElementById('ten');
+            var ten = nodeTen.value;
+            console.log('Tên là: ' + ten);
+
+            var nodeGiaGoc = document.getElementById('giaGoc');
+            var giaGoc = parseInt(nodeGiaGoc.value);
+            console.log('Giá sp là: ' + giaGoc);
+
+            var nodePhanTramGiamGia = document.getElementById('phanTramGiamGia');
+            var phanTramGiamGia = parseFloat(nodePhanTramGiamGia.value);
+            console.log('Phần trăm giảm giá ' + phanTramGiamGia);
+
+            var nodeKhuVuc = document.getElementById('khuVuc');
+            var khuVuc = nodeKhuVuc.value;
+            console.log('Khu vực: ' + khuVuc);
+
+            var sanPham = taoDoiTuongSanPham(hinhAnh, ten, giaGoc, phanTramGiamGia, khuVuc, null);
+            console.log(sanPham);
+
+            var jsonDanhSachSanPham = localStorage.getItem('danhSachSanPham');
+            var danhSachSanPham = JSON.parse(jsonDanhSachSanPham);
+            if (danhSachSanPham == null) {
+                danhSachSanPham = new Array();
+            }
+
+            console.log(danhSachSanPham);
+
+            danhSachSanPham.push(sanPham);
+
+            var jsonDanhSachSanPham = JSON.stringify(danhSachSanPham);
+            localStorage.setItem('danhSachSanPham', jsonDanhSachSanPham);
+            alert('Thêm sản phẩm thành công');
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách giỏ hàng </title>
+    <script src="https://kit.fontawesome.com/4e23580c46.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/danh_sach_gio_hang.css">
+    <script src="js/giohang.js"></script>
+    <script src="js/sanpham.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <div class="header">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="images/logo1.png">
+                </a>
+            </div>
+            <div class="theo-doi-don-hang">
+
+                <i class="fas fa-shipping-fast"></i>
+                <span class="van-chuyen">Vận chuyển nhanh</span>
+
+
+            </div>
+            <div class="thong-bao">
+
+                <i class="fas fa-bell"></i>
+                <span class="chuong-thong-bao">Thông báo</span>
+
+            </div>
+            <div class="dang-nhap">
+                <i class="fas fa-user"></i>
+                <span class="nhap"><a href="dangnhap.html"> Đăng nhập</a></span>
+            </div>
+            <div class="dang-ki">
+                <button class="click-dang-ki">Đăng kí</button>
+
+                <button class="click-dang-ki">Tạo tài khoản mới</button>
+
+                <button class="click-dang-ki">
+                    <span class="icon">
+                        <i class="fab fa-facebook"></i>
+                        Đăng nhập bằng facebook
+                    </span>
+                </button>
+                <button class="click-dang-ki">
+                    <span class="icon-email">
+                        <i class="fas fa-envelope"></i>
+                        Đăng nhập bằng email
+                    </span>
+                </button>
+            </div>
+
+            <div class="thanh-tim-kiem">
+                <div class="tim-kiem">
+                    <input type="o-tim-kiem"
+                        placeholder="Tìm kiếm các sản phẩm, thương hiệu hay danh mục mà bạn muốn...  ">
+                    <input type="button">
+                </div>
+            </div>
+        </div>
+        <nav id="nav-bar">
+            <ul class="menu1">
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Máy ảnh - Máy quay phim</a>
+
+                    <ul class="menu2">
+
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Máy ảnh</a>
+                        </li>
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Phụ kiện máy ảnh - máy quay phim</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Hàng quốc tế</a>
+                </li>
+
+                <li class="item-menu1">
+                    <a href="#" class="tlite-menu1">Thời trang- Phụ kiện</a>
+
+                    <ul class="menu2">
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Thời trang nam</a>
+                        </li>
+                        <li class="item-menu2">
+                            <a href="#" class="tlite-menu2">Thời trang nữ</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="item-menu1">
+                    <a href="danh_sach_gio_hang.html">
+                        <img src="images/xe.png">
+                    </a>
+
+                </li>
+        </nav>
+    </header>
+    <div id="gio-hang" class="gio-hang">
+        <h1 class="tieuDe">Danh sách sản phẩm</h1>
+        <!--Tiêu đề item-->
+        <div class="item-gio-hang">
+            <div class="hinhAnh">
+
+            </div>
+            <p class="ten">Sản phẩm</p>
+            <div class="gia">Đơn giá</div>
+            <p class="soLuong">Số lượng</p>
+            <p class="tongTien">Tổng tiền</p>
+            <div class="hanhDong">
+                <p>Thao tác</p>
+            </div>
+        </div>
+
+        <!-- <div class="item-gio-hang">
+            <div class="hinhAnh">
+                <img src="http://www.designbolts.com/wp-content/uploads/2016/09/iPhone-7-Plus_Image.jpg">
+            </div>
+            <p class="ten">Iphone7</p>
+            <div class="gia">
+                <span class="giaGoc">7000000 đ</span>
+                <span class="giaBan">5000000 đ</span>
+            </div>
+            <input type="number" class="soLuong" value="1">
+            <p class="tongTien">5000000 đ</p>
+            <div class="hanhDong">
+                <i class="far fa-trash-alt"></i>
+            </div>
+
+        </div>
+    -->
+       <div class="muahang">
+           <h2>Mua hàng</h2>
+           <label id="ho-ten" for="ho-ten">Họ tên</label>
+           <input type="text" id="ho-ten" placeholder="Nhập họ tên ">
+           <label id="hienThiLoiHoTen" for="hoTen" class="error"></label>
+
+           <label id="so-dien-thoai" for="so-dien-thoai">Số điện thoại</label>
+           <input type="number" id="so-dien-thoai" placeholder="Nhập số điện thoại">
+           <label id="hienThiLoiSoDienThoai" for="soDienThoai" class="error"></label>
+
+           <label id="dia-chi" for="dia-chi">Địa chỉ</label>
+           <input type="text " id="dia-chi" placeholder="Nhập địa chỉ">
+           <label id="hienThiLoiDiaChi" for="diaChi" class="error"></label>
+
+           <button onclick="onclickDangNhap()">Tiến hành đặt hàng</button>
+       </div>
+       <script >
+       function onclickDangNhap() {
+        //kiểm tra hợp lệ
+        if (fromDangNhap() == true) {
+            //thực hiện đăng nhập
+
+        }
+    }
+
+    /* Yêu cầu: kiểm tra tính hợp lệ của from dăng nhập
+    output nếu hợp lệ thì trả về ture
+    nếu k thì trả về false*/
+
+    function fromDangNhap() {
+        var hople = true;
+
+        var nodeHoTen = document.getElementById('ho-ten');
+        var hoTen = nodeHoTen.value;
+
+        var nodeSoDienThoai = document.getElementById('so-dien-thoai');
+        var soDienThoai= nodeSoDienThoai.value;
+
+        var nodeDiaChi = document.getElementById('dia-chi');
+        var diaChi = nodeDiaChi.value;
+
+        console.log('Họ tên' + hoTen);
+        console.log('Số điện thoại:  ' + soDienThoai);
+        console.log('Địa chỉ là: ' + diaChi);
+
+        var nodeHienThiLoiHoTen = document.getElementById('hienThiLoiHoTen');
+        nodeHienThiLoiHoTen.innerHTML = '';
+
+        var nodeHienThiLoiSoDienThoai = document.getElementById('hienThiLoiSoDienThoai');
+        nodeHienThiLoiSoDienThoai.innerHTML = '';
+
+        var nodeHienThiLoiDiaChi = document.getElementById('hienThiLoiDiaChi');
+        nodeHienThiLoiDiaChi.innerHTML = '';
+
+        if (hoTen == null || hoTen.length <= 0) {
+
+            nodeHienThiLoiHoTen.innerHTML = "Họ tên không được để trống";
+            hople = false;
+        }
+        if (soDienThoai == null || soDienThoai.length <= 0) {
+
+            nodeHienThiLoiSoDienThoai.innerHTML = "Số điện thoại không được để trống";
+            hople = false;
+        }
+        if (diaChi == null || diaChi.length <= 0) {
+            nodeHienThiLoiDiaChi.innerHTML = "Không để trống địa chỉ ";
+            hople = false;
+        }
+        return true;
+    }
+</script>
+    </div>
+
+    <script>
+
+        /*var myDataRef = new Firebase('đường dẫn DB');*/
+
+        hienThiGioHang();
+        /* Bước 1 xây dựng layout*/
+
+        /* Bước 2 Viết hàm chuyển đổi đối tượng item giỏ hàng thành html
+        --> giả lập hàm (hardcode luôn đoạn html trong bước 1*/
+
+        /* Bước 3: chuyển đổi danh sách item giỏ hàng thành html */
+
+        /* Bước 4: Gắn html lên node cần hiển thị */
+        function hienThiGioHang() {
+            /* Bước 1: load giỏ hàng từ local storage lên*/
+
+            var danhSachItemGioHang = layGioHangTuLocalStorage()
+            console.log(danhSachItemGioHang);
+            /* Bước 2: chuyển danh sách item giỏ hàng thành html*/
+
+            var HTML = chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang);
+            console.log(HTML);
+            /* Bước 3: Viết hàm xl logic ở bước 2*/
+            var nodeGioHang = document.getElementById('gio-hang');
+            nodeGioHang.innerHTML = nodeGioHang.innerHTML + HTML;
+        }
+        /* Bước 5: Viết hàm xử lí logic ở bước 2 */
+
+        function chuyenDoiDoiTuongItemGioHang(itemGioHang) {
+            //id sản phẩm& số lượng
+
+            var sanPham = laySanPhamTheoId(itemGioHang, idSanPham);
+            var tongTien = itemGioHang.soLuong * tinhGiaBan();
+            var html = '    <div class="item-gio-hang">  ' +
+                '               <div class="hinhAnh">  ' +
+                '                   <img src="' + sanPham.hinhAnh + '">  ' +
+                '               </div>  ' +
+                '               <p class="ten">' + sanPham.ten + '</p>  ' +
+                '               <div class="gia">  ' +
+                '                   <span class="giaGoc">' + sanPham.giaGoc + '</span>  ' +
+                '                   <span class="giaBan">' + sanPham.tinhGiaBan() + '</span>  ' +
+                '               </div>  ' +
+                '               <input type="number" class="soLuong" value="' + itemGioHang.soLuong + '">  ' +
+                '               <p class="tongTien">' + tongTien + '</p>  ' +
+                '               <div class="hanhDong">  ' +
+                '                   <i class="far-fa-trash-alt"></i>  ' +
+                '               </div>  ' +
+                '     ' +
+                '          </div>  ';
+
+            return html;
+        }
+        function chuyenDanhSachItemGioHangSangHTML(danhSachItemGioHang) {
+            var htmlTong = '';
+            for (var i = 0; i < danhSachItemGioHang.length; i++) {
+                var html = chuyenDoiDoiTuongItemGioHang(danhSachItemGioHang[i]);
+                htmlTong = htmlTong + html;
+
+            }
+            return htmlTong;
+        }
+
+
+      
+    </script>
+
+</body>
+
+</html>
